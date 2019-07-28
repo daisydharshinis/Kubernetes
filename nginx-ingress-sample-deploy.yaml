@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: 
+    app: nginxhello
+  name: nginxhello
+spec:
+  selector:
+    matchLabels:
+      app: nginxhello
+  template:
+    metadata:
+      labels:
+        app: nginxhello
+    spec:
+       containers:
+       - image: nbrown/nginxhello
+         name: nginxhello
+         ports:
+         - containerPort: 80
+          
+    
